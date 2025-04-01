@@ -19,6 +19,9 @@ function Clusters() {
           if(response.error) {
             console.log("An error occured while getting clusters!")
             return 
+          } else if (response.message) {
+            console.log("Accessed endpoint")
+            return
           }
           const formattedData = [];
     
@@ -54,7 +57,7 @@ function Clusters() {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
           <div className="flex items-center justify-between md:justify-start w-full md:w-auto">
             <Link 
-              to="/data" 
+              to="/" 
               className="flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors"
             >
               <ArrowLeft className="w-5 h-5" /> Back to Analysis
@@ -71,7 +74,7 @@ function Clusters() {
 
         <div className="flex flex-wrap gap-4 mb-8">
           <Link 
-            to="/data" 
+            to="/table" 
             className="flex items-center gap-2 bg-emerald-500/20 hover:bg-emerald-500/30 px-4 py-2 rounded-lg transition-colors"
           >
             <Table className="w-5 h-5 text-emerald-400" />
