@@ -14,6 +14,7 @@ function Clusters() {
         try{
           setLoadCluster(true) 
           const response = await axios.get("https://sentisense-backend.onrender.com/clustering")
+          console.log(response)
           const data = JSON.parse(response.data)
     
           if(response.error) {
